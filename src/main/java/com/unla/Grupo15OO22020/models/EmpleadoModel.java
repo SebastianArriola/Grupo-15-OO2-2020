@@ -53,16 +53,6 @@ public class EmpleadoModel extends PersonaModel {
 		this.idEmpleado = idEmpleado;
 	}
 
-
-
-	public boolean aceptarSolicitudStock() {
-		return true;
-	}
-
-	public boolean rechazarSolicitudStock() {
-		return false;
-	}
-
 	public float calcularSueldo(List<CarritoModel> listaCarrito, EmpleadoModel empleado, int mes) {
 		float sueldo = 0;
 		double porcentajeSueldo = 0;

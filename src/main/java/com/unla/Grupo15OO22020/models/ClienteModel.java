@@ -33,14 +33,6 @@ public class ClienteModel extends PersonaModel {
 		this.idCliente = idCliente;
 	}
 
-	public boolean rechazarEspera() {
-		return false;
-	}
-
-	public boolean aceptarEspera() {
-		return true;
-	}
-
 	public Set<LocalModel> getListaLocales() {
 		return listaLocales;
 	}
