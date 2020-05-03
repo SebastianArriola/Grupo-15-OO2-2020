@@ -1,6 +1,6 @@
 package com.unla.Grupo15OO22020.models;
 
-import java.time.LocalDate;
+
 import java.util.List;
 
 public class EmpleadoModel extends PersonaModel {
@@ -13,9 +13,9 @@ public class EmpleadoModel extends PersonaModel {
 	
 	}
 	
-	public EmpleadoModel(String nombre, String apellido, LocalDate fechaNacimiento, long dni, String franjaHoraria,
+	public EmpleadoModel(long idPersona, String nombre, String apellido, String fechaNacimiento, long dni, String franjaHoraria,
 			boolean tipoEmpleado, LocalModel local) {
-		super(nombre, apellido, fechaNacimiento, dni);
+		super(idPersona, nombre, apellido, fechaNacimiento, dni);
 		this.franjaHoraria = franjaHoraria;
 		this.tipoEmpleado = tipoEmpleado;
 		this.local = local;

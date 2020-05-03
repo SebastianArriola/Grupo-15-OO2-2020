@@ -1,6 +1,6 @@
 package com.unla.Grupo15OO22020.models;
 
-import java.time.LocalDate;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -12,8 +12,8 @@ public class ClienteModel extends PersonaModel {
 	public ClienteModel() {
 	}
 
-	public ClienteModel(String nombre, String apellido, LocalDate fechaNacimiento, long dni, String email) {
-		super(nombre, apellido, fechaNacimiento, dni);
+	public ClienteModel(long idPersona, String nombre, String apellido, String fechaNacimiento, long dni, String email) {
+		super(idPersona, nombre, apellido, fechaNacimiento, dni);
 		this.email = email;
 	}
 

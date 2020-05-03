@@ -1,6 +1,6 @@
 package com.unla.Grupo15OO22020.entities;
 
-import java.time.LocalDate;
+
 import java.time.LocalTime;
 
 import javax.persistence.Column;
@@ -8,13 +8,15 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+
 
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 @Entity
-@Table(name="persona")
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Persona {
 
 	@Id
@@ -28,7 +30,7 @@ public class Persona {
 	private String apellido;
 	
 	@Column(name="fechaNacimiento")
-	private LocalDate fechaNacimiento;
+	private String fechaNacimiento;
 	
 	@Column(name="dni")
 	private long dni;
@@ -45,7 +47,9 @@ public class Persona {
 		super();
 	}
 
-	public Persona(long idPersona, String nombre, String apellido, LocalDate fechaNacimiento, long dni) {
+	
+
+	public Persona(long idPersona, String nombre, String apellido, String fechaNacimiento, long dni) {
 		super();
 		this.idPersona = idPersona;
 		this.nombre = nombre;
@@ -53,6 +57,8 @@ public class Persona {
 		this.fechaNacimiento = fechaNacimiento;
 		this.dni = dni;
 	}
+
+
 
 	public long getIdPersona() {
 		return idPersona;
@@ -78,11 +84,11 @@ public class Persona {
 		this.apellido = apellido;
 	}
 
-	public LocalDate getFechaNacimiento() {
+	public String getFechaNacimiento() {
 		return fechaNacimiento;
 	}
 
-	public void setFechaNacimiento(LocalDate fechaNacimiento) {
+	public void setFechaNacimiento(String fechaNacimiento) {
 		this.fechaNacimiento = fechaNacimiento;
 	}
 
