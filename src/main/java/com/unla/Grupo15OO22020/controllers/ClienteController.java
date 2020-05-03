@@ -35,7 +35,7 @@ public class ClienteController {
 	}
 	
 	@PostMapping("")
-	public RedirectView red(@ModelAttribute("cliente") ClienteModel clienteModel){
+	public RedirectView redirect(@ModelAttribute("cliente") ClienteModel clienteModel){
 		
 		return new RedirectView(ViewRouteHelpers.CLIENT_INDEX);
 		
@@ -56,7 +56,6 @@ public class ClienteController {
 	
 	@GetMapping("/{id}")
 	public ModelAndView get(@PathVariable("id") long idPersona) {
-		System.out.println(idPersona);
 		ModelAndView mAV = new ModelAndView(ViewRouteHelpers.CLIENT_UPDATE);
 		mAV.addObject("cliente", clienteService.findByIdPersona(idPersona));
 		return mAV;
@@ -64,14 +63,12 @@ public class ClienteController {
 	
 	@PostMapping("/update")
 	public RedirectView update(@ModelAttribute("cliente") ClienteModel clienteModel) {
-		
 		clienteService.insertOrUpdate(clienteModel);
 		return new RedirectView(ViewRouteHelpers.CLIENT_ROOT);
 	}
 	
 	@PostMapping("/delete/{id}")
 	public RedirectView delete(@PathVariable("id") long idPersona) {
-		System.out.println(idPersona);
 		clienteService.remove(idPersona);
 		return new RedirectView(ViewRouteHelpers.CLIENT_ROOT);
 	}

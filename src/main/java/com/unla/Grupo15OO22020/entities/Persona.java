@@ -1,6 +1,6 @@
 package com.unla.Grupo15OO22020.entities;
 
-
+import java.sql.Date;
 import java.time.LocalTime;
 
 import javax.persistence.Column;
@@ -30,7 +30,7 @@ public class Persona {
 	private String apellido;
 	
 	@Column(name="fechaNacimiento")
-	private String fechaNacimiento;
+	private Date fechaNacimiento;
 	
 	@Column(name="dni")
 	private long dni;
@@ -47,9 +47,7 @@ public class Persona {
 		super();
 	}
 
-	
-
-	public Persona(long idPersona, String nombre, String apellido, String fechaNacimiento, long dni) {
+	public Persona(long idPersona, String nombre, String apellido, Date fechaNacimiento, long dni) {
 		super();
 		this.idPersona = idPersona;
 		this.nombre = nombre;
@@ -84,11 +82,11 @@ public class Persona {
 		this.apellido = apellido;
 	}
 
-	public String getFechaNacimiento() {
+	public Date getFechaNacimiento() {
 		return fechaNacimiento;
 	}
 
-	public void setFechaNacimiento(String fechaNacimiento) {
+	public void setFechaNacimiento(Date fechaNacimiento) {
 		this.fechaNacimiento = fechaNacimiento;
 	}
 

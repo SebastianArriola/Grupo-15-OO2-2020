@@ -1,0 +1,25 @@
+<form action="#" th:action="@{/empleados/update}" th:object="${empleado}" method="post">
+<input type="hidden" th:field="*{idPersona}" />
+<p>
+	Nombre: <input type="text" th:field="*{nombre}" />
+</p>
+<p>
+	Apellido: <input type="text" th:field="*{apellido}" />
+</p>
+<p>
+	Fecha de Nacimiento: <input type="date" th:field="*{fechaNacimiento}" />
+</p>
+<p>
+	DNI: <input type="text" th:field="*{dni}" />
+</p>
+<p>
+	Franja Horaria: <input type="text" th:field="*{franjaHoraria}" />
+</p>
+<p>
+	Tipo empleado: <input type="text" th:field="*{tipoEmpleado}" />
+</p>
+<input type="submit" value="Editar" />
+</form>
+<form action="#" th:action="@{/empleados/delete/{id}(id=${empleado.idPersona})}" method="post">
+	<input type="submit" value="delete person" />
+</form>

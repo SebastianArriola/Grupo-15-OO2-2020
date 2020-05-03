@@ -1,0 +1,10 @@
+<form action="#" th:action="@{/empleados/create}" th:object="${empleado}"method="post">
+	<p> Nombre: <input type="text" th:field="*{nombre}" /></p>
+	<p> Apellido: <input type="text" th:field="*{apellido}" /></p>
+	<p> Fecha de Nacimiento: <input type="date" th:field="*{fechaNacimiento}" /></p>
+	<p> DNI: <input type="text" th:field="*{dni}" /></p>
+	<p> Franja Horaria: <input type="text" th:field="*{franjaHoraria}" /></p>
+	<p> Tipo de Empleado: <input type="text" th:field="*{tipoEmpleado}" /></p>
+	
+	<input type="submit" value="Crear" />
+</form>

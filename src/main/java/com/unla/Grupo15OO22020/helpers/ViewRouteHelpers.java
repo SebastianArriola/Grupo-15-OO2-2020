@@ -11,4 +11,12 @@ public class ViewRouteHelpers {
 	//redirects	
 	public final static String ROUTE_INDEX = "/index";
 	public final static String CLIENT_ROOT = "/clientes";
+	public final static String EMPLEADO_ROOT="/empleados";
+
+	
+	//Empleado
+	public final static String EMPLEADO_INDEX = "empleado/index";
+	public final static String EMPLEADO_ADD = "empleado/new";
+	public final static String EMPLEADO_UPDATE = "empleado/update";
+	
 }

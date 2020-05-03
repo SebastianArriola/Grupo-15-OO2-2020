@@ -10,19 +10,19 @@ public class LocalModel {
 
 	private long idLocal;
 	private String direccion;
-	private double latitud;
-	private double longitud;
+	private String latitud;
+	private String longitud;
 	private String telefono;
 	private StockModel stock;
 	private Set<ClienteModel> listaClientes = new HashSet<ClienteModel>();
 	private Set<EmpleadoModel> listaEmpleados = new HashSet<EmpleadoModel>();
-	private Set<FacturaModel> listaFacturas = new HashSet<FacturaModel>();
-	private Set<SolicitudStockModel> listaSolicitudesStock = new HashSet<SolicitudStockModel>();
+//	private Set<FacturaModel> listaFacturas = new HashSet<FacturaModel>();
+//	private Set<SolicitudStockModel> listaSolicitudesStock = new HashSet<SolicitudStockModel>();
 	
 	public LocalModel() {
 	}
 	
-	public LocalModel(String direccion, double latitud, double longitud, String telefono, EmpleadoModel gerente) {
+	public LocalModel(String direccion, String latitud, String longitud, String telefono, EmpleadoModel gerente) {
 		super();
 		this.direccion = direccion;
 		this.latitud = latitud;
@@ -55,19 +55,19 @@ public class LocalModel {
 		this.direccion = direccion;
 	}
 
-	public double getLatitud() {
+	public String getLatitud() {
 		return latitud;
 	}
 
-	public void setLatitud(float latitud) {
+	public void setLatitud(String latitud) {
 		this.latitud = latitud;
 	}
 
-	public double getLongitud() {
+	public String getLongitud() {
 		return longitud;
 	}
 
-	public void setLongitud(float longitud) {
+	public void setLongitud(String longitud) {
 		this.longitud = longitud;
 	}
 
@@ -79,23 +79,23 @@ public class LocalModel {
 		this.telefono = telefono;
 	}
 
-	public Set<FacturaModel> getListaFacturas() {
-		return listaFacturas;
-	}
+//	public Set<FacturaModel> getListaFacturas() {
+//		return listaFacturas;
+//	}
 
-	public void setListaFacturas(Set<FacturaModel> listaFacturas) {
-		this.listaFacturas = listaFacturas;
-	}
-
-	public Set<SolicitudStockModel> getListaSolicitudesStock() {
-		return listaSolicitudesStock;
-	}
-
-	public void setListaSolicitudesStock(Set<SolicitudStockModel> listaSolicitudesStock) {
-		this.listaSolicitudesStock = listaSolicitudesStock;
-	}
-
-	
+//	public void setListaFacturas(Set<FacturaModel> listaFacturas) {
+//		this.listaFacturas = listaFacturas;
+//	}
+//
+//	public Set<SolicitudStockModel> getListaSolicitudesStock() {
+//		return listaSolicitudesStock;
+//	}
+//
+//	public void setListaSolicitudesStock(Set<SolicitudStockModel> listaSolicitudesStock) {
+//		this.listaSolicitudesStock = listaSolicitudesStock;
+//	}
+//
+//	
 	
 
 

@@ -1,24 +1,23 @@
 package com.unla.Grupo15OO22020.entities;
 
 
+import java.sql.Date;
 import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
-
-
-
 @Entity
 @Table(name = "cliente")
 public class Cliente extends Persona{
 	
-	;
+	@Column(name = "email")
 	private String email;
 	
 	@ManyToMany(cascade = { CascadeType.ALL})
@@ -36,7 +35,7 @@ public class Cliente extends Persona{
 		super();
 	}
 
-	public Cliente(long idPersona, String nombre, String apellido, String fechaNacimiento, long dni, String email) {
+	public Cliente(long idPersona, String nombre, String apellido, Date fechaNacimiento, long dni, String email) {
 		super(idPersona, nombre, apellido, fechaNacimiento, dni);
 		this.email = email;
 	}

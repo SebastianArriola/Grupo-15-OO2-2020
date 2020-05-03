@@ -1,6 +1,6 @@
 package com.unla.Grupo15OO22020.models;
 
-
+import java.sql.Date;
 import java.util.List;
 
 public class EmpleadoModel extends PersonaModel {
@@ -10,15 +10,21 @@ public class EmpleadoModel extends PersonaModel {
 	private long idEmpleado;
 
 	public EmpleadoModel() {
-	
 	}
-	
-	public EmpleadoModel(long idPersona, String nombre, String apellido, String fechaNacimiento, long dni, String franjaHoraria,
-			boolean tipoEmpleado, LocalModel local) {
+
+	public EmpleadoModel(long idPersona, String nombre, String apellido, Date fechaNacimiento, long dni, String franjaHoraria, boolean tipoEmpleado, LocalModel local) {
 		super(idPersona, nombre, apellido, fechaNacimiento, dni);
 		this.franjaHoraria = franjaHoraria;
 		this.tipoEmpleado = tipoEmpleado;
 		this.local = local;
+	}
+
+	public long getIdEmpleado() {
+		return idEmpleado;
+	}
+
+	public void setIdEmpleado(long idEmpleado) {
+		this.idEmpleado = idEmpleado;
 	}
 
 	public String getFranjaHoraria() {
@@ -43,14 +49,6 @@ public class EmpleadoModel extends PersonaModel {
 
 	public void setTipoEmpleado(boolean tipoEmpleado) {
 		this.tipoEmpleado = tipoEmpleado;
-	}
-
-	public long getIdEmpleado() {
-		return idEmpleado;
-	}
-
-	protected void setIdEmpleado(long idEmpleado) {
-		this.idEmpleado = idEmpleado;
 	}
 
 	public float calcularSueldo(List<CarritoModel> listaCarrito, EmpleadoModel empleado, int mes) {

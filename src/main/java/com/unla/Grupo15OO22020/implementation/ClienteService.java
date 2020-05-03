@@ -12,11 +12,10 @@ import com.unla.Grupo15OO22020.models.ClienteModel;
 import com.unla.Grupo15OO22020.repositories.IClienteRepository;
 import com.unla.Grupo15OO22020.services.IClienteService;
 
+
 @Service("clienteService")
 public class ClienteService implements IClienteService{
 
-	
-	
 	@Autowired
 	@Qualifier("clienteRepository")
 	private IClienteRepository clienteRepository;

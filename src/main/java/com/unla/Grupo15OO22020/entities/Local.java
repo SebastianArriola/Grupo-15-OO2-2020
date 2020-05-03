@@ -1,26 +1,33 @@
 package com.unla.Grupo15OO22020.entities;
 
+
+import java.time.LocalDateTime;
+
 import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
+import javax.persistence.FetchType;
 
+import javax.persistence.OneToMany;
 
+import org.hibernate.annotations.CreationTimestamp;
 @Entity
-@Table(name="local")
+@Table(name = "local")
 public class Local {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long idLocal;
-	
+
 	@Column(name = "direccion")
 	private String direccion;
 	
@@ -29,16 +36,49 @@ public class Local {
 	
 	@Column(name = "longitud")
 	private String longitud;
-	
+
 	@Column(name = "telefono")
 	private String telefono;
 	
 	@ManyToMany(mappedBy = "listaLocales")
 	private Set<Cliente> listaClientes = new HashSet<Cliente>();
 
+//	@Column(name = "stock")
+//	private StockModel stock;
+	
+//	@OneToMany(fetch = FetchType.LAZY, mappedBy = "tablaLocal")
+//	private Set<Cliente> listaClientes = new HashSet<Cliente>();
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "local")
+	private Set<Empleado> listaEmpleados = new HashSet<Empleado>();
+//	@OneToMany(fetch = FetchType.LAZY, mappedBy = "tablaLocal")
+//	private Set<Factura> listaFacturas = new HashSet<Factura>();
+//	@OneToMany(fetch = FetchType.LAZY, mappedBy = "tablaLocal")
+//	private Set<SolicitudStock> listaSolicitudesStock = new HashSet<SolicitudStock>();
+
+	@Column(name = "createdAt")
+	@CreationTimestamp
+	private LocalDateTime createdAt;
+	@Column(name = "updatedAt")
+	@CreationTimestamp
+	private LocalDateTime updateAt;
+	
+	
+	public Local() {}
+	
+	public Local(long idLocal, String direccion, String latitud, String longitud, String telefono) {
+		super();
+		this.idLocal = idLocal;
+		this.direccion = direccion;
+		this.latitud = latitud;
+		this.longitud = longitud;
+		this.telefono = telefono;
+		
+	}
+
 	public long getIdLocal() {
 		return idLocal;
 	}
+
 
 	public void setIdLocal(long idLocal) {
 		this.idLocal = idLocal;
@@ -84,20 +124,4 @@ public class Local {
 		this.listaClientes = listaClientes;
 	}
 
-	public Local() {
-		super();
-	}
-
-	public Local(long idLocal, String direccion, String latitud, String longitud, String telefono) {
-		super();
-		this.idLocal = idLocal;
-		this.direccion = direccion;
-		this.latitud = latitud;
-		this.longitud = longitud;
-		this.telefono = telefono;
-		
-	}
-	
-	
-	
 }
