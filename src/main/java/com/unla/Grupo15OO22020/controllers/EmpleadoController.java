@@ -68,4 +68,10 @@ public class EmpleadoController{
 		return new RedirectView(ViewRouteHelpers.EMPLEADO_ROOT);
 	}
 	
+	@PostMapping("/back")
+	public RedirectView back() {
+		
+		return new RedirectView(ViewRouteHelpers.EMPLEADO_ROOT);
+	}
+	
 }

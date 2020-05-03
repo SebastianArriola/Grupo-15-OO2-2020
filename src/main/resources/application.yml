@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:mysql://localhost/grupo15OO22020?serverTimezone=UTC
+    url: jdbc:mysql://localhost/sarriola?serverTimezone=UTC
     username: root
-    password: root
+    password: boquita
   jpa:
     show-sql: true
     hibernate:

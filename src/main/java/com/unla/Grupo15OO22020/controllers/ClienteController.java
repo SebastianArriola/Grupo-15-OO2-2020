@@ -73,4 +73,10 @@ public class ClienteController {
 		return new RedirectView(ViewRouteHelpers.CLIENT_ROOT);
 	}
 	
+	@PostMapping("/back")
+	public RedirectView back() {
+		
+		return new RedirectView(ViewRouteHelpers.CLIENT_ROOT);
+	}
+	
 }
